@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../css/ExCall.css';
 
-
 class ExCall extends Component {
     constructor(props) {
         super();
@@ -28,7 +27,7 @@ class ExCall extends Component {
     render() {
         return (
             <div>
-                <p>gonna throw api's in here</p>
+                <p>data field</p>
             </div>
         );
     }
