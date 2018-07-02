@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cAAe;EACX,YAAY,EAAE,GAAG",
+"sources": ["../scss/Groceries.scss"],
+"names": [],
+"file": "Groceries.css"
+}

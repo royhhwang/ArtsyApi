@@ -1,1 +1,3 @@
-# RNEX-backend
+Full Stack App
+
+Linked with Twitter API
