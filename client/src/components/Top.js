@@ -12,7 +12,7 @@ class Top extends Component {
 
     render() {
         return (
-            <div>
+            <div className="top-layer">
                 <div>making slow and steady progress</div>
             </div>
         );

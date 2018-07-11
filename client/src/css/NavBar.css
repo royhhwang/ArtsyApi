@@ -1,6 +1,8 @@
 .navbar-layer {
   background-color: snow;
-  font-size: 20px;
+  min-height: 10%;
+  max-height: 10%;
+  font-size: 28px;
   text-align: center;
   overflow: hidden; }
 
@@ -9,34 +11,31 @@
   padding: 10px 10px;
   text-decoration: none; }
 
+.logo-layer {
+  display: inline-block;
+  position: absolute;
+  left: 2%;
+  top: 0.35em; }
+
 .dropdown {
   display: none; }
 
-.no-nav {
+.dropdown-content {
   height: 95vh;
   width: 8em;
   position: fixed;
   z-index: 1;
   top: 2em;
-  right: 0;
+  right: 0%;
   background-color: snow;
   overflow-x: hidden;
   padding-top: 50px;
-  animation: slideOut 0.5s forwards linear;
-  -webkit-animation: slideOut 0.5s forwards linear; }
+  animation: slideOut 0.3s forwards linear;
+  -webkit-animation: slideOut 0.3s forwards linear; }
 
 .show-nav {
-  height: 95vh;
-  width: 8em;
-  position: fixed;
-  z-index: 1;
-  top: 2em;
-  right: 0;
-  background-color: snow;
-  overflow-x: hidden;
-  padding-top: 50px;
-  animation: slideIn 0.5s forwards linear;
-  -webkit-animation: slideIn 0.5s forwards linear; }
+  animation: slideIn 0.3s forwards linear;
+  -webkit-animation: slideIn 0.3s forwards linear; }
 
 @keyframes slideIn {
   0% {

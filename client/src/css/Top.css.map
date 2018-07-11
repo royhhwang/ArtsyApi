@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,UAAW;EACP,WAAW,EAAE,GAAG",
+"sources": ["../scss/Top.scss"],
 "names": [],
 "file": "Top.css"
 }

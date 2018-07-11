@@ -1,0 +1,53 @@
+.preload-layer {
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  pointer-events: none; }
+
+#preload-center {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+#preload-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  width: 200px;
+  margin-top: -200px;
+  margin-left: -100px; }
+
+.img-absolute {
+  min-height: 200px;
+  min-width: 200px; }
+
+.layer-fade {
+  -webkit-animation: removeLayer 7s linear forwards;
+  animation: removeLayer 7s linear forwards; }
+
+@-webkit-keyframes removeLayer {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  25% {
+    opacity: 0;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(0); } }
+@keyframes removeLayer {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  25% {
+    opacity: 0;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(0); } }
+
+/*# sourceMappingURL=Preloader.css.map */
