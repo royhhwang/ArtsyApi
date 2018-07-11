@@ -1,6 +1,7 @@
 {
   "name": "rnex-backend",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
@@ -12,7 +13,9 @@
   "dependencies": {
     "express": "^4.16.2",
     "nodemon": "^1.17.5",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-materialize": "^2.3.3",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"

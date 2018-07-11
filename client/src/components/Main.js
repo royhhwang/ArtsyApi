@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import Groceries from './Groceries';
+import Fade from 'react-reveal/Fade';
+import Top from './Top';
 import ExCall from './ExCall';
+import NavBar from './NavBar';
 import '../css/Main.css';
 
 class Main extends Component {
   render() {
     return (
       <div>
-        <Groceries />
-        <ExCall />
+        <NavBar />
+        <Fade bottom>
+          <Top />
+          <ExCall />
+        </Fade>
       </div>
     );
   }

@@ -28,6 +28,7 @@ class ExCall extends Component {
         return (
             <div>
                 <p>data field</p>
+                {this.state.response}
             </div>
         );
     }
