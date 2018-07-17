@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Top from './Top';
-import ExCall from './ExCall';
-import NavBar from './NavBar';
-import Preloader from './Preloader';
+// import ExCall from './ExCall';
+import BTNav from './BTNav';
+// import Preloader from './Preloader';
 import '../css/Main.css';
 
 class Main extends Component {
   render() {
     return (
       <div>
-        <Preloader />
-        <NavBar />
+        {/* <Preloader /> */}
+        <BTNav />
         <Fade bottom>
           <Top />
-          <ExCall />
+          {/* <ExCall /> */}
         </Fade>
       </div>
     );

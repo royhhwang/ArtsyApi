@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Face from '../img/faceonly.png';
 import '../css/Top.css';
 
 class Top extends Component {
