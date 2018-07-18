@@ -26,7 +26,7 @@ class ExCall extends Component {
 
     render() {
         return (
-            <div>
+            <div className="excall-layer">
                 <p>data field</p>
                 {this.state.response}
             </div>

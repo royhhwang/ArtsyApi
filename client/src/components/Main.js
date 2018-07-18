@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Top from './Top';
-// import ExCall from './ExCall';
+import ExCall from './ExCall';
 import BTNav from './BTNav';
 // import Preloader from './Preloader';
 import '../css/Main.css';
@@ -14,7 +14,7 @@ class Main extends Component {
         <BTNav />
         <Fade bottom>
           <Top />
-          {/* <ExCall /> */}
+          <ExCall />
         </Fade>
       </div>
     );

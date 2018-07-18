@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,UAAW;EACP,WAAW,EAAE,GAAG",
+"mappings": "AAAA,UAAW;EACP,WAAW,EAAE,GAAG;EAChB,YAAY,EAAE,GAAG;EACjB,UAAU,EAAE,KAAK",
 "sources": ["../scss/Top.scss"],
 "names": [],
 "file": "Top.css"

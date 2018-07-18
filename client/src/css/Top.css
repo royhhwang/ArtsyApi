@@ -1,4 +1,6 @@
 .top-layer {
-  padding-top: 2em; }
+  padding-top: 2em;
+  padding-left: 1em;
+  min-height: 100vh; }
 
 /*# sourceMappingURL=Top.css.map */

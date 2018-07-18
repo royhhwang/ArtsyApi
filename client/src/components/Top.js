@@ -11,7 +11,7 @@ class Top extends Component {
 
     render() {
         return (
-            <div className="top-layer">
+            <div className="top-layer" id="top">
                 <div>making slow and steady progress</div>
             </div>
         );
