@@ -1,6 +1,23 @@
 .top-layer {
-  padding-top: 2em;
-  padding-left: 1em;
-  min-height: 100vh; }
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  z-index: 1;
+  overflow: hidden; }
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+  max-height: 45em;
+  min-height: 45em;
+  min-width: 100% !important;
+  max-width: 100% !important; }
+
+@media screen and (max-width: 1199px) {
+  .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    max-height: 35em;
+    min-height: 35em; } }
+@media screen and (max-width: 767px) {
+  .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    max-height: 25em !important;
+    min-height: 25em !important; } }
 
 /*# sourceMappingURL=Top.css.map */

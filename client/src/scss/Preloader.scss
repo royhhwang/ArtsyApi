@@ -1,10 +1,10 @@
 .preload-layer {
-    background-color: black;
+    background-color: beige;
     color: white;
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 3;
+    z-index: 10;
     pointer-events: none;
 }
 
@@ -22,6 +22,7 @@
     width: 200px;
     margin-top: -200px;
     margin-left: -100px;
+    text-align: center;
 }
 
 .img-absolute {
@@ -30,40 +31,34 @@
 }
 
 .layer-fade {
-    -webkit-animation: removeLayer 7s linear forwards;
-    animation: removeLayer 7s linear forwards;
+    -webkit-animation: removeLayer 1s linear forwards;
+    animation: removeLayer 1s linear forwards;
 }
 
 @-webkit-keyframes removeLayer {
     0% {
-        opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 
-    25% {
-        opacity: 0;
-        transform: scale(1);
+    50% {
+        transform: translateY(-100%);
     }
 
     100% {
-        opacity: 0;
         transform: scale(0);
     }
 }
 
 @keyframes removeLayer {
     0% {
-        opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 
-    25% {
-        opacity: 0;
-        transform: scale(1);
+    50% {
+        transform: translateY(-100%);
     }
 
     100% {
-        opacity: 0;
         transform: scale(0);
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Face from '../img/faceonly.png';
+import { ProgressBar } from 'react-bootstrap';
 import '../css/Preloader.css';
 
 class Preloader extends Component {
@@ -11,7 +11,7 @@ class Preloader extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.setState({ loading: false }), 3000);
+        setTimeout(() => this.setState({ loading: false }), 1000);
     }
 
     componentWillUnmount() {
@@ -20,13 +20,14 @@ class Preloader extends Component {
 
     render() {
 
-        const removePreload = this.state.show ? 'layer-visible' : 'layer-fade';
+        const removePreload = this.state.loading ? 'layer-visible' : 'layer-fade';
+        const now = 50;
 
         return (
             <div className={removePreload + " preload-layer"}>
                 <div id='preload-center'>
                     <div id='preload-absolute'>
-                        <img src={Face} alt="my face" className="img-absolute" />
+                        <ProgressBar now={now} label={`${now}%`} />
                     </div>
                 </div>
             </div>

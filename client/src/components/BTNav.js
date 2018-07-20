@@ -12,17 +12,21 @@ class BTNav extends Component {
         }
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', () => {
-            this.setState({
-                screenSize: window.innerWidth < 768
-            });
-        }, false);
+    componentWillMount() {
+        window.addEventListener('resize', this.screenCheck);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.screenCheck);
+    }
+
+    screenCheck = () => {
+        this.setState({
+            screenSize: window.innerWidth < 768
+        });
     }
 
     render() {
-
-        const mobileOpen = this.state.screenSize ? ' open' : '';
 
         return (
             <Navbar inverse collapseOnSelect>
@@ -32,16 +36,21 @@ class BTNav extends Component {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
-                <Navbar.Collapse>
+                <Navbar.Collapse onClick={this.mobileNavMove}>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="#top">
+                        <NavItem eventKey={1} href="#home" className="mobile-hide">
                             Home
-                </NavItem>
-                        <NavDropdown eventKey={3} title="" id="basic-nav-dropdown" className={mobileOpen}>
-                            <MenuItem eventKey={3.1}>Page</MenuItem>
-                            <MenuItem eventKey={3.2}>Data</MenuItem>
-                            <MenuItem eventKey={3.3}>API</MenuItem>
-                            <MenuItem eventKey={3.3}>Context</MenuItem>
+                        </NavItem>
+                        <NavItem eventKey={2} href="#about" className="mobile-hide">
+                            About
+                        </NavItem>
+                        <NavItem eventKey={3} href="#contact" className="mobile-hide">
+                            Contact
+                        </NavItem>
+                        <NavDropdown eventKey={3} title="" id="basic-nav-dropdown" className="open">
+                            <MenuItem eventKey={3.1} href="#home">Home</MenuItem>
+                            <MenuItem eventKey={3.2} href="#about">About</MenuItem>
+                            <MenuItem eventKey={3.3} href="#contact">Contact</MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
