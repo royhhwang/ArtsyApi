@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.get('/api/hello', (req, res) => {
-    res.send({ express: 'Api working' });
+    res.send({ express: 'Express online' });
 });
 
 if (process.env.NODE_ENV === 'production') {

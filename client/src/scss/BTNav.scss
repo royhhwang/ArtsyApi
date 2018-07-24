@@ -31,7 +31,7 @@
 .navbar-inverse {
     border-color: white !important;
     background-color: white !important;
-    background: linear-gradient(to right, black 0%, lightseagreen 80%) !important;
+    background: linear-gradient(to right, rgb(3, 85, 105) 0%, rgb(24, 168, 161) 80%) !important;
     border-radius: 8px !important;
     margin-bottom: 0 !important;
 }
@@ -46,6 +46,10 @@
 
 .navbar-inverse .navbar-brand, a {
     color: white !important;
+}
+
+.navbar-inverse .navbar-brand, a:hover {
+    text-decoration: none;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
@@ -70,6 +74,15 @@ ul.dropdown-menu {
 
 .open > .dropdown-menu {
     display: none;
+}
+
+.icon-block {
+    margin-right:0.5em;
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    opacity: 0.9;
 }
 
 @media screen and (max-width: 767px) {

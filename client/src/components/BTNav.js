@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import '../css/BTNav.css';
+import Header from '../img/header.jpg';
 
 
 class BTNav extends Component {
@@ -32,11 +33,12 @@ class BTNav extends Component {
             <Navbar inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#top">Roy Hwang</a>
+                        <a href="#top"><img src={Header} alt="roy icon" className="img-circle icon-block" /></a>
+                        <a href="#top" className="mobile-hide">Roy Hwang</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
-                <Navbar.Collapse onClick={this.mobileNavMove}>
+                <Navbar.Collapse>
                     <Nav pullRight>
                         <NavItem eventKey={1} href="#home" className="mobile-hide">
                             Home

@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
-import Top from './Top';
+import Carousel from './Carousel';
 import ExCall from './ExCall';
 import BTNav from './BTNav';
 import Preloader from './Preloader';
 import '../css/Main.css';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loaded: false
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ loaded: !this.state.loaded });
+  }
+
   render() {
-    return (
+    const secondWave = this.state.loaded ?
       <div>
-        <Preloader />
         <BTNav />
         <Fade>
-          <Top />
+          <Carousel />
         </Fade>
         <Fade bottom>
           <ExCall />
         </Fade>
       </div>
-    );
+      :
+      null
+      ;
+    
+
+    return (
+      <div>
+        <Preloader />
+        {secondWave}
+      </div>
+    )
   }
 }
 

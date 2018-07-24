@@ -4,7 +4,7 @@ import Pic1 from '../img/blackwp.jpg';
 import Pic2 from '../img/grass.jpg';
 import Pic3 from '../img/sky.jpg';
 import Pic4 from '../img/spotlight.jpg';
-import '../css/Top.css';
+import '../css/Carousel.css';
 
 class Top extends Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,UAAW;EACP,WAAW,EAAE,KAAK;EAClB,YAAY,EAAE,KAAK;EACnB,aAAa,EAAE,KAAK;EACpB,OAAO,EAAE,CAAC;EACV,QAAQ,EAAE,MAAM;;AAGpB,uHAAwH;EACpH,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,eAAe;EAC1B,SAAS,EAAE,eAAe;;AAG9B,qCAAsC;EAClC,uHAAwH;IACpH,UAAU,EAAE,IAAI;IAChB,UAAU,EAAE,IAAI;AAIxB,oCAAqC;EACjC,uHAAwH;IACpH,UAAU,EAAE,eAAe;IAC3B,UAAU,EAAE,eAAe",
-"sources": ["../scss/Top.scss"],
+"sources": ["../scss/Carousel.scss"],
 "names": [],
-"file": "Top.css"
+"file": "Carousel.css"
 }

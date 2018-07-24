@@ -31,8 +31,24 @@
 }
 
 .layer-fade {
-    -webkit-animation: removeLayer 1s linear forwards;
-    animation: removeLayer 1s linear forwards;
+    -webkit-animation: removeLayer 1.2s linear forwards;
+    animation: removeLayer 1.2s linear forwards;
+}
+
+.progress-bar {
+    background-color: #337ab7 !important;
+    transition: width 0s linear !important;
+}
+
+.loader {
+    color: black;
+    display: inline-block;
+    -webkit-animation: fadeIn 1s linear forwards;
+    animation: fadeIn 1s linear forwards;
+}
+
+.no-msg {
+    display: none;
 }
 
 @-webkit-keyframes removeLayer {
@@ -60,5 +76,25 @@
 
     100% {
         transform: scale(0);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
