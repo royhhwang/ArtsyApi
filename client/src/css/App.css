@@ -17,7 +17,7 @@
   font-family: Code;
   src: url("../fonts/CodeBold.otf") format("opentype"); }
 body {
-  font-family: LemonMilk;
+  font-family: Code;
   background-image: url("../img/grass.jpg");
   background-size: cover;
   background-repeat: no-repeat;

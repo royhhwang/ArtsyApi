@@ -15,7 +15,10 @@
     "nodemon": "^1.17.5",
     "path": "^0.12.7",
     "react-bootstrap": "^0.32.1",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "^1.2.2",
+    "superagent": "^3.8.3",
+    "traverson": "^6.0.4",
+    "traverson-hal": "^6.0.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"

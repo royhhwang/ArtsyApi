@@ -13,6 +13,48 @@
     max-width: 100% !important;
 }
 
+.carousel-caption {
+    color: white !important;
+}
+
+.carousel-control {
+    animation: none !important;
+    color:white !important;
+}
+
+.carousel-inner > .item > img {
+    animation: imageZoom 60s ease infinite;
+    -webkit-animation: imageZoom 60s ease infinite;
+}
+
+@-webkit-keyframes imageZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1) translate(50px, 20px);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes imageZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1) translate(50px, 20px);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
         max-height: 35em;

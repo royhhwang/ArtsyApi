@@ -43,12 +43,21 @@
 .loader {
     color: black;
     display: inline-block;
+    position: absolute;
+    font-size: 24px;
+    top: -0.17em;
+    left: 1.9em;
     -webkit-animation: fadeIn 1s linear forwards;
     animation: fadeIn 1s linear forwards;
 }
 
 .no-msg {
     display: none;
+}
+
+.no-bar {
+    -webkit-animation: fadeOut 0.5s linear forwards;
+    animation: fadeOut 0.5s linear forwards;
 }
 
 @-webkit-keyframes removeLayer {
@@ -96,5 +105,25 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }

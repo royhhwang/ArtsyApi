@@ -25,7 +25,7 @@
 .navbar-inverse {
   border-color: white !important;
   background-color: white !important;
-  background: linear-gradient(to right, #035569 0%, #18a8a1 80%) !important;
+  background: linear-gradient(to right, snow 40%, #47fff6 100%) !important;
   border-radius: 8px !important;
   margin-bottom: 0 !important; }
 
@@ -36,10 +36,31 @@
   line-height: 45px !important; }
 
 .navbar-inverse .navbar-brand, a {
-  color: white !important; }
+  color: black !important; }
 
-.navbar-inverse .navbar-brand, a:hover {
-  text-decoration: none; }
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  text-decoration: none !important; }
+
+.hvr-ripple-out:before {
+  content: '';
+  position: absolute;
+  border: transparent solid 3px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s; }
+
+.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+  -webkit-animation-name: ripple;
+  animation-name: ripple; }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
   background-color: black !important; }
@@ -67,6 +88,22 @@ ul.dropdown-menu {
   max-width: 40px;
   opacity: 0.9; }
 
+@-webkit-keyframes ripple {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    border: white solid 3px; } }
+@keyframes ripple {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    border: white solid 3px; } }
 @media screen and (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
     background: transparent !important; }

@@ -3,7 +3,8 @@ import Fade from 'react-reveal/Fade';
 import Carousel from './Carousel';
 import ExCall from './ExCall';
 import BTNav from './BTNav';
-import Preloader from './Preloader';
+// import Preloader from './Preloader';
+import Dataset from './Dataset';
 import '../css/Main.css';
 
 class Main extends Component {
@@ -20,23 +21,24 @@ class Main extends Component {
 
   render() {
     const secondWave = this.state.loaded ?
-      <div>
+      <div className="main-layer">
         <BTNav />
         <Fade>
           <Carousel />
         </Fade>
         <Fade bottom>
+          <Dataset />
           <ExCall />
         </Fade>
       </div>
       :
       null
       ;
-    
+
 
     return (
       <div>
-        <Preloader />
+        {/* <Preloader /> */}
         {secondWave}
       </div>
     )

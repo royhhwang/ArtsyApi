@@ -34,7 +34,7 @@ class BTNav extends Component {
                 <Navbar.Header>
                     <Navbar.Brand>
                         <a href="#top"><img src={Header} alt="roy icon" className="img-circle icon-block" /></a>
-                        <a href="#top" className="mobile-hide">Roy Hwang</a>
+                        <a href="#top" className="mobile-hide hvr-ripple-out">Roy Hwang</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
