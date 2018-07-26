@@ -30,29 +30,29 @@ class BTNav extends Component {
     render() {
 
         return (
-            <Navbar inverse collapseOnSelect>
+            <Navbar inverse collapseOnSelect id="nav">
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#top"><img src={Header} alt="roy icon" className="img-circle icon-block" /></a>
-                        <a href="#top" className="mobile-hide hvr-ripple-out">Roy Hwang</a>
+                        <a href="#nav"><img src={Header} alt="roy icon" className="img-circle icon-block" /></a>
+                        <a href="#nav" className="mobile-hide hvr-ripple-out">Roy Hwang</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="#home" className="mobile-hide">
-                            Home
+                        <NavItem eventKey={1} href="#title" className="mobile-hide">
+                            Title
                         </NavItem>
-                        <NavItem eventKey={2} href="#about" className="mobile-hide">
-                            About
+                        <NavItem eventKey={2} href="#carousel" className="mobile-hide">
+                            Carousel
                         </NavItem>
-                        <NavItem eventKey={3} href="#contact" className="mobile-hide">
-                            Contact
+                        <NavItem eventKey={3} href="#img" className="mobile-hide">
+                            Images
                         </NavItem>
                         <NavDropdown eventKey={3} title="" id="basic-nav-dropdown" className="open">
-                            <MenuItem eventKey={3.1} href="#home">Home</MenuItem>
-                            <MenuItem eventKey={3.2} href="#about">About</MenuItem>
-                            <MenuItem eventKey={3.3} href="#contact">Contact</MenuItem>
+                            <MenuItem eventKey={3.1} href="#title">Title</MenuItem>
+                            <MenuItem eventKey={3.2} href="#carousel">Carousel</MenuItem>
+                            <MenuItem eventKey={3.3} href="#img">Images</MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

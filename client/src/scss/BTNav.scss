@@ -31,7 +31,7 @@
 .navbar-inverse {
     border-color: white !important;
     background-color: white !important;
-    background: linear-gradient(to right, snow 40%, rgb(71, 255, 246) 100%) !important;
+    background: linear-gradient(to right, rgb(0, 0, 0) 40%, rgb(0, 0, 71) 100%) !important;
     border-radius: 8px !important;
     margin-bottom: 0 !important;
 }
@@ -45,7 +45,7 @@
 }
 
 .navbar-inverse .navbar-brand, a {
-    color: black !important;
+    color: snow !important;
 }
 
 .hvr-ripple-out {
@@ -105,7 +105,7 @@ ul.dropdown-menu {
     max-height: 40px;
     min-width: 40px;
     max-width: 40px;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 @-webkit-keyframes ripple {

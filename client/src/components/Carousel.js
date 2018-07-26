@@ -19,6 +19,7 @@ class Top extends Component {
             <div className="top-layer" id="top">
                 <Carousel
                     interval={null}
+                    id="carousel"
                 >
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic3} />

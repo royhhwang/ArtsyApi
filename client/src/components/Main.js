@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Carousel from './Carousel';
-import ExCall from './ExCall';
+// import ExCall from './ExCall';
 import BTNav from './BTNav';
 import Preloader from './Preloader';
 import Dataset from './Dataset';
@@ -26,10 +26,7 @@ class Main extends Component {
         <Fade>
           <Carousel />
         </Fade>
-        <Fade bottom>
-          <Dataset />
-          <ExCall />
-        </Fade>
+        <Dataset />
       </div>
       :
       null

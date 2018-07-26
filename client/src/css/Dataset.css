@@ -1,8 +1,88 @@
 .dataset-layer {
   text-align: center;
-  padding-top: 2em; }
+  padding-top: 3em; }
 
 .dataset-layer img {
-  max-width: 20vw; }
+  max-width: 230px;
+  min-width: 230px;
+  min-height: 230px;
+  max-height: 230px; }
+
+.data-blocks {
+  max-height: 300px !important;
+  min-height: 300px !important; }
+
+.img-titles {
+  padding-bottom: 3em;
+  font-family: OswaldLight !important; }
+
+.title-block {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  font-size: 50px;
+  border-top: snow solid 2px;
+  border-bottom: snow solid 2px;
+  background: linear-gradient(to right, transparent 30%, rgba(124, 124, 124, 0.089) 50%, transparent 70%) !important; }
+
+.artsy-block {
+  border: transparent solid 6em; }
+
+.buffer-block {
+  padding-bottom: 20em !important; }
+
+.top-arrow {
+  position: relative !important;
+  bottom: 0 !important;
+  right: .5em !important;
+  padding-top: 5em !important; }
+
+.btn-default {
+  color: black !important;
+  border-color: transparent !important;
+  background-color: transparent !important; }
+
+.btn {
+  font-size: 2em !important; }
+
+.hvr-ripple-out-black {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  text-decoration: none !important; }
+
+.hvr-ripple-out-black:before {
+  content: '';
+  position: absolute;
+  border: black solid 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s; }
+
+.hvr-ripple-out-black:hover:before, .hvr-ripple-out-black:focus:before, .hvr-ripple-out-black:active:before {
+  -webkit-animation-name: ripple;
+  animation-name: ripple; }
+
+@-webkit-keyframes ripple {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    border: black solid 6px; } }
+@keyframes ripple {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    border: black solid 6px; } }
 
 /*# sourceMappingURL=Dataset.css.map */

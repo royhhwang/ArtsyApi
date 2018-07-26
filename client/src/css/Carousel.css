@@ -1,9 +1,10 @@
 .top-layer {
-  padding-top: 0.5em;
+  padding-top: 1em;
   padding-left: 0.5em;
   padding-right: 0.5em;
   z-index: 1;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: MontserratLight !important; }
 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
   max-height: 45em;
@@ -19,6 +20,8 @@
   color: white !important; }
 
 .carousel-inner > .item > img {
+  min-width: 100% !important;
+  max-width: 100% !important;
   animation: imageZoom 60s ease infinite;
   -webkit-animation: imageZoom 60s ease infinite; }
 
