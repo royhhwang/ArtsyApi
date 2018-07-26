@@ -23,27 +23,27 @@ class Top extends Component {
                 >
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic3} />
-                        <Carousel.Caption>
+                        {/* <Carousel.Caption>
                             <h3>First photo</h3>
-                        </Carousel.Caption>
+                        </Carousel.Caption> */}
                     </Carousel.Item>
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic2} />
-                        <Carousel.Caption>
+                        {/* <Carousel.Caption>
                             <h3>Second photo</h3>
-                        </Carousel.Caption>
+                        </Carousel.Caption> */}
                     </Carousel.Item>
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic1} />
-                        <Carousel.Caption>
+                        {/* <Carousel.Caption>
                             <h3>Third photo</h3>
-                        </Carousel.Caption>
+                        </Carousel.Caption> */}
                     </Carousel.Item>
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic4} />
-                        <Carousel.Caption>
+                        {/* <Carousel.Caption>
                             <h3>Fourth photo</h3>
-                        </Carousel.Caption>
+                        </Carousel.Caption> */}
                     </Carousel.Item>
                 </Carousel>
             </div>
