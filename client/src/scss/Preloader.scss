@@ -56,8 +56,8 @@
 }
 
 .no-bar {
-    -webkit-animation: fadeOut 0.5s linear forwards;
-    animation: fadeOut 0.5s linear forwards;
+    -webkit-animation: fadeOut 3s linear forwards;
+    animation: fadeOut 3s linear forwards;
 }
 
 @-webkit-keyframes removeLayer {
@@ -70,6 +70,7 @@
     }
 
     100% {
+        transform: translateY(-100%);
         transform: scale(0);
     }
 }
@@ -84,12 +85,21 @@
     }
 
     100% {
+        transform: translateY(-100%);
         transform: scale(0);
     }
 }
 
 @-webkit-keyframes fadeIn {
     0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
         opacity: 0;
     }
 
@@ -103,6 +113,14 @@
         opacity: 0;
     }
 
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
     100% {
         opacity: 1;
     }
@@ -113,6 +131,10 @@
         opacity: 1;
     }
 
+    10% {
+        opacity: 0;
+    }
+
     100% {
         opacity: 0;
     }
@@ -121,6 +143,10 @@
 @keyframes fadeOut {
     0% {
         opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
     }
 
     100% {
