@@ -20,6 +20,8 @@ class Top extends Component {
                 <Carousel
                     interval={null}
                     id="carousel"
+                    indicators={null}
+                    controls={null}
                 >
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src={Pic3} />

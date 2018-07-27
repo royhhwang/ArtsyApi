@@ -85,8 +85,7 @@ ul.dropdown-menu {
   min-height: 40px;
   max-height: 40px;
   min-width: 40px;
-  max-width: 40px;
-  opacity: 0.8; }
+  max-width: 40px; }
 
 @-webkit-keyframes ripple {
   100% {

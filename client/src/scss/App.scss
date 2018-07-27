@@ -90,3 +90,8 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+*:focus {
+    outline: 0 !important;
+    outline: none !important;
+}

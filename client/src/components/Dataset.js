@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-import { Row, Col, Grid, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Grid, Glyphicon, Button } from 'react-bootstrap';
 import Default from '../img/artsy.png';
 import '../css/Dataset.css';
 
@@ -9,7 +9,7 @@ const JsonHalAdapter = require('traverson-hal');
 const xappToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzMzE1NzM4NSwiaWF0IjoxNTMyNTUyNTg1LCJhdWQiOiI1YjU4ZTU4OTQwMDY5OTMzZjEwZWEzNjUiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI1OGU1ODk3MzVmZmM1MjQwZDM5MjliIn0.Yzg1iWiMTlFR_i3bsWO3Em5WeYSwgjilrLBoBLO4izs';
 
 traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter);
-let api = traverson.from('https://api.artsy.net/api/search?q=space').jsonHal();
+let api = traverson.from('https://api.artsy.net/api/search?q=space&count=12').jsonHal();
 let imgHits = 0;
 
 class Dataset extends Component {
@@ -21,7 +21,8 @@ class Dataset extends Component {
             query: '',
             winHeight: window.innerHeight
         };
-        this.handleScroll = this.handleScroll.bind(this);
+        // this.handleScroll = this.handleScroll.bind(this);
+        this.handlePagination = this.handlePagination.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +45,7 @@ class Dataset extends Component {
             })
             .getResource((error, art) => {
                 artdata.push(art);
+                console.log(artdata);
                 this.setState({ results: artdata[0]._embedded.results });
                 this.setState({ nextPage: artdata[0]._links.next.href.split("10").shift() });
                 this.setState({ query: "&q" + artdata[0]._links.next.href.split("q").pop() });
@@ -53,6 +55,7 @@ class Dataset extends Component {
     handlePagination() {
         let artdata = [];
         imgHits += 10;
+        document.getElementById('title').scrollIntoView();
         api = traverson.from(this.state.nextPage + imgHits + this.state.query).jsonHal();
         api.newRequest()
             .withRequestOptions({
@@ -67,20 +70,19 @@ class Dataset extends Component {
             })
     }
 
-    handleScroll() {
-        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        const body = document.body;
-        const html = document.documentElement;
-        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        const windowBottom = windowHeight + window.pageYOffset;
-        if (windowBottom >= docHeight) {
-            this.handlePagination();
-            document.getElementById('title').scrollIntoView();
-        }
-        else {
-            return (null);
-        }
-    }
+    // handleScroll() {
+    //     const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    //     const body = document.body;
+    //     const html = document.documentElement;
+    //     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    //     const windowBottom = windowHeight + window.pageYOffset;
+    //     if (windowBottom >= docHeight) {
+    //         this.handlePagination();
+    //     }
+    //     else {
+    //         return (null);
+    //     }
+    // }
 
     render() {
 
@@ -151,9 +153,14 @@ class Dataset extends Component {
                         {artistData}
                         <Col xs={12} sm={12} md={12} lg={12}>
                             <div className="top-arrow hvr-ripple-out-black" id="popup">
-                                <Glyphicon glyph="triangle-bottom" />
+                                <h3 className="art-title">Click for more</h3>
+                                <Button onClick={this.handlePagination}>
+                                    <Glyphicon glyph="triangle-top" />
+                                </Button>
                             </div>
-                            <h3 className="buffer-block">Scroll to view more</h3>
+                        </Col>
+                        <Col xs={12} sm={12} md={12} lg={12}>
+                            <div className="buffer-block">&nbsp;</div>
                         </Col>
                     </Row>
                 </Grid>

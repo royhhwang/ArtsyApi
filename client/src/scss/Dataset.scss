@@ -16,8 +16,9 @@
 }
 
 .img-titles {
-    padding-bottom: 3em;
+    padding-bottom: 4em;
     font-family: OswaldLight !important;
+    max-height: 73px !important;
 }
 
 .title-block {
@@ -33,15 +34,19 @@
     border: transparent solid 6em;
 }
 
+.art-title {
+    padding-top: 2em !important;
+}
+
 .buffer-block {
-    padding-bottom: 20em !important;
+    padding-bottom: 2em !important;
 }
 
 .top-arrow {
     position: relative !important;
     bottom: 0 !important;
     right: .5em !important;
-    padding-top: 5em !important;
+    font-size: 25px !important;
 }
 
 .btn-default {
