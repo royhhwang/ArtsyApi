@@ -1,12 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
 const port = process.env.PORT || 8080;
-
-app.get('/api/hello', (req, res) => {
-    res.send({ express: 'Express online' });
-});
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')));

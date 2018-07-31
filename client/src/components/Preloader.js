@@ -45,7 +45,7 @@ class Preloader extends Component {
                 <div id='preload-center'>
                     <div id='preload-absolute'>
                         <ProgressBar active striped now={now} label={`${now}%`} className={removeLoad} />
-                        <div className={welcomeMsg}>Welcome</div>
+                        <div className={welcomeMsg + ' preload-shadow'}>Welcome</div>
                     </div>
                 </div>
             </div>

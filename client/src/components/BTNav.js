@@ -33,8 +33,8 @@ class BTNav extends Component {
             <Navbar inverse collapseOnSelect id="nav">
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#nav"><img src={Header} alt="roy icon" className="icon-block" /></a>
-                        <a href="#nav" className="mobile-hide hvr-ripple-out">Artsy</a>
+                        <a href="#top"><img src={Header} alt="roy icon" className="icon-block" /></a>
+                        <a href="#top" className="mobile-hide hvr-ripple-out">Artsy</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>

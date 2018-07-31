@@ -44,8 +44,8 @@
 
 .top-arrow {
     position: relative !important;
-    bottom: 0 !important;
-    right: .5em !important;
+    padding-top: 1.5em !important;
+    padding-bottom: 2.5em !important;
     font-size: 25px !important;
 }
 
@@ -57,33 +57,6 @@
 
 .btn {
     font-size: 2em !important;
-}
-
-.hvr-ripple-out-black {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    text-decoration: none !important;
-}
-
-.hvr-ripple-out-black:before {
-    content: '';
-    position: absolute;
-    border: black solid 0px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-}
-
-.hvr-ripple-out-black:hover:before, .hvr-ripple-out-black:focus:before, .hvr-ripple-out-black:active:before {
-    -webkit-animation-name: ripple;
-    animation-name: ripple;
 }
 
 @-webkit-keyframes ripple {
@@ -105,5 +78,23 @@
         left: -12px;
         opacity: 0;
         border: black solid 6px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dataset-layer img {
+        max-width: 130px !important;
+        min-width: 130px !important;
+        min-height: 130px !important;
+        max-height: 130px !important;
+    }
+
+    .data-blocks {
+        max-height: 193px !important;
+        min-height: 193px !important;
+    }
+
+    .artsy-block {
+        border: transparent solid 2.5em;
     }
 }

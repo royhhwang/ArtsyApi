@@ -74,9 +74,6 @@
 .navbar-toggle {
   margin-top: 1.4em !important; }
 
-ul.dropdown-menu {
-  background: linear-gradient(to right, black 0%, lightseagreen 80%); }
-
 .open > .dropdown-menu {
   display: none; }
 

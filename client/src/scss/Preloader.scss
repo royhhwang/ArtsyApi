@@ -1,6 +1,5 @@
 .preload-layer {
     background-color: beige;
-    color: white;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -20,9 +19,14 @@
     top: 50%;
     height: 200px;
     width: 200px;
-    margin-top: -200px;
+    margin-top: -100px;
     margin-left: -100px;
     text-align: center;
+}
+
+.preload-shadow {
+    padding: 15px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 1);
 }
 
 .img-absolute {
@@ -44,9 +48,10 @@
     color: black;
     display: inline-block;
     position: absolute;
-    font-size: 24px;
-    top: -0.17em;
-    left: 1.9em;
+    font-size: 40px;
+    top: -0.8em;
+    right: -0.5em;
+    letter-spacing: 0.12em;
     -webkit-animation: fadeIn 1s linear forwards;
     animation: fadeIn 1s linear forwards;
 }
@@ -131,7 +136,7 @@
         opacity: 1;
     }
 
-    10% {
+    20% {
         opacity: 0;
     }
 
@@ -145,7 +150,7 @@
         opacity: 1;
     }
 
-    10% {
+    20% {
         opacity: 0;
     }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Carousel from './Carousel';
 import BTNav from './BTNav';
-// import Preloader from './Preloader';
+import Preloader from './Preloader';
 import Dataset from './Dataset';
 import '../css/Main.css';
 
@@ -34,7 +34,7 @@ class Main extends Component {
 
     return (
       <div>
-        {/* <Preloader /> */}
+        <Preloader />
         {secondWave}
       </div>
     )
