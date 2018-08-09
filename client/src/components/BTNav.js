@@ -28,7 +28,6 @@ class BTNav extends Component {
     }
 
     render() {
-
         return (
             <Navbar inverse collapseOnSelect id="nav">
                 <Navbar.Header>
