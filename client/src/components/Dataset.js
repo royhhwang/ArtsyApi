@@ -7,7 +7,8 @@ import '../css/Dataset.css';
 
 const traverson = require('traverson');
 const JsonHalAdapter = require('traverson-hal');
-const xappToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNDM4NDk0NSwiaWF0IjoxNTMzNzgwMTQ1LCJhdWQiOiI1YjU4ZTU4OTQwMDY5OTMzZjEwZWEzNjUiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI2YmEwYjEyY2NmMjk1NDI3NjJkYzAwIn0.2TJcl82sMDwQP5F9VjyrDJKcnxAXREqonBHa-sNTh3Y';
+const xappToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTQ4OTE5OSwiaWF0IjoxNTM0ODg0Mzk5LCJhdWQiOiI1YjU4ZTU4OTQwMDY5OTMzZjEwZWEzNjUiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3YzdhMmZkYTA3NWI0Y2Y5NTE3ODBiIn0.woNLU-5JSem2TUIBZn-1lpRhkGJtTHEXyBW5dCzXBxk";
+
 let imgHits = 10;
 
 traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter);
