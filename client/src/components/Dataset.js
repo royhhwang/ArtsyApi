@@ -6,8 +6,8 @@ import Spinner from "./Spinner";
 import '../css/Dataset.css';
 
 var request = require('superagent');
-var clientID = process.env.REACT_APP_CLIENT_ID,
-    clientSecret = process.env.REACT_APP_CLIENT_SECRET,
+var clientID = "75d6773448d08c419c89",
+    clientSecret = "09cf60f760cc5a644146a71544ec373b",
     apiUrl = 'https://api.artsy.net/api/tokens/xapp_token',
     xappToken;
 
