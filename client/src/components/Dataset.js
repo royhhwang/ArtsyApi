@@ -5,12 +5,15 @@ import Default from '../img/artsy.png';
 import Spinner from "./Spinner";
 import '../css/Dataset.css';
 
-const traverson = require('traverson');
-const JsonHalAdapter = require('traverson-hal');
-const xappToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTQ4OTE5OSwiaWF0IjoxNTM0ODg0Mzk5LCJhdWQiOiI1YjU4ZTU4OTQwMDY5OTMzZjEwZWEzNjUiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3YzdhMmZkYTA3NWI0Y2Y5NTE3ODBiIn0.woNLU-5JSem2TUIBZn-1lpRhkGJtTHEXyBW5dCzXBxk";
+var request = require('superagent');
+var clientID = process.env.REACT_APP_CLIENT_ID,
+    clientSecret = process.env.REACT_APP_CLIENT_SECRET,
+    apiUrl = 'https://api.artsy.net/api/tokens/xapp_token',
+    xappToken;
 
 let imgHits = 10;
-
+const traverson = require('traverson');
+const JsonHalAdapter = require('traverson-hal');
 traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter);
 
 class Dataset extends Component {
@@ -27,12 +30,22 @@ class Dataset extends Component {
     }
 
     componentDidMount() {
-        this.handleApiSearch();
+        this.handleToken();
         window.addEventListener("scroll", this.handleScroll);
     }
 
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleToken() {
+        request
+            .post(apiUrl)
+            .send({ client_id: clientID, client_secret: clientSecret })
+            .then(res => {
+                xappToken = res.body.token;
+                this.handleApiSearch();
+            });
     }
 
     handleApiSearch() {
