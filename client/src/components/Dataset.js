@@ -8,7 +8,7 @@ import '../css/Dataset.css';
 var request = require('superagent');
 var clientID = process.env.REACT_APP_CLIENT_ID,
     clientSecret = process.env.REACT_APP_CLIENT_SECRET,
-    apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.artsy.net/api/tokens/xapp_token',
+    apiUrl = 'https://api.artsy.net/api/tokens/xapp_token',
     xappToken;
 
 let imgHits = 10;
