@@ -1,6 +1,6 @@
 .dataset-layer {
     text-align: center;
-    padding-top: 3em;
+    width: 100%;
 }
 
 .dataset-layer img {
@@ -21,13 +21,27 @@
     max-height: 73px !important;
 }
 
+.img-blocks {
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 24px 88px -8px rgba(30, 30, 30, 0.352);
+    }
+}
+
 .title-block {
+    margin: 0;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
     font-size: 50px;
     border-top: snow solid 2px;
     border-bottom: snow solid 2px;
-    background: linear-gradient(to right, transparent 30%, rgba(124, 124, 124, 0.089) 50%, transparent 70%) !important;
+    background: rgba(124, 124, 124, 0.089);
+
+    &:hover {
+        color: black !important;
+    }
 }
 
 .artsy-block {
@@ -83,6 +97,7 @@
 
 @media screen and (max-width: 500px) {
     .dataset-layer img {
+        display: inline-block;
         max-width: 130px !important;
         min-width: 130px !important;
         min-height: 130px !important;

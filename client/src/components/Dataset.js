@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-import { Row, Col, Grid, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Glyphicon } from 'react-bootstrap';
 import Default from '../img/artsy.png';
 import Spinner from "./Spinner";
 import '../css/Dataset.css';
@@ -11,7 +11,8 @@ var clientID = "75d6773448d08c419c89",
     apiUrl = 'https://api.artsy.net/api/tokens/xapp_token',
     xappToken;
 
-let imgHits = 10;
+let imgRefresh = 0;
+let imgHits = 0;
 const traverson = require('traverson');
 const JsonHalAdapter = require('traverson-hal');
 traverson.registerMediaType(JsonHalAdapter.mediaType, JsonHalAdapter);
@@ -24,6 +25,7 @@ class Dataset extends Component {
             secondResults: [],
             pushResults: [],
             loading: false,
+            query: 'space',
             winHeight: window.innerHeight
         };
         this.handleScroll = this.handleScroll.bind(this);
@@ -50,7 +52,7 @@ class Dataset extends Component {
 
     handleApiSearch() {
         let artData = [];
-        let api = traverson.from('https://api.artsy.net/api/search?q=space').jsonHal();
+        let api = traverson.from('https://api.artsy.net/api/search?q=' + this.state.query).jsonHal();
         api.newRequest()
             .withRequestOptions({
                 headers: {
@@ -60,23 +62,42 @@ class Dataset extends Component {
             })
             .getResource((error, art) => {
                 artData.push(art);
-                this.setState({ results: this.state.results.concat(artData[0]._embedded.results) });
+                this.setState({ secondResults: this.state.results.concat(artData[0]._embedded.results) });
+            })
+    }
 
-                if (this.state.results !== []) {
-                    let secData = [];
-                    let secondApi = traverson.from('https://api.artsy.net/api/search?offset=10&q=space&size=10').jsonHal();
-                    secondApi.newRequest()
-                        .withRequestOptions({
-                            headers: {
-                                'X-Xapp-Token': xappToken,
-                                'Accept': 'application/vnd.artsy-v2+json'
-                            }
-                        })
-                        .getResource((error, art) => {
-                            secData.push(art);
-                            this.setState({ secondResults: this.state.results.concat(secData[0]._embedded.results) });
-                        })
+    handleSearchValue = (event) => {
+        event.preventDefault();
+        this.setState({
+            query: this.search.value
+        }, () => {
+            if (this.state.query && this.state.query.length > 2) {
+                this.handleContentRefresh();
+                this.search.value = '';
+                imgHits = 0;
+            }
+            else {
+                document.getElementById('empty-text').innerHTML = "Please enter at least 3 letters!";
+            }
+        }
+        )
+    }
+
+    handleContentRefresh = () => {
+        let pushData = [];
+        let api = traverson.from('https://api.artsy.net/api/search?offset=' + imgRefresh + '&q=' + this.state.query + '&size=10').jsonHal();
+        api.newRequest()
+            .withRequestOptions({
+                headers: {
+                    'X-Xapp-Token': xappToken,
+                    'Accept': 'application/vnd.artsy-v2+json'
                 }
+            })
+            .getResource((error, art) => {
+                pushData.push(art);
+                this.setState({ secondResults: pushData[0]._embedded.results });
+                this.setState({ pushResults: [] });
+                this.setState({ loading: false });
             })
     }
 
@@ -100,7 +121,7 @@ class Dataset extends Component {
     handleSearchPush() {
         imgHits += 10;
         let pushData = [];
-        let api = traverson.from('https://api.artsy.net/api/search?offset=' + imgHits + '&q=space&size=10').jsonHal();
+        let api = traverson.from('https://api.artsy.net/api/search?offset=' + imgHits + '&q=' + this.state.query + '&size=10').jsonHal();
         api.newRequest()
             .withRequestOptions({
                 headers: {
@@ -129,8 +150,6 @@ class Dataset extends Component {
     render() {
 
         let dataArray = this.state.secondResults;
-        let pushArray = this.state.pushResults;
-
         let artistData = dataArray.map((art, index) => {
             if (art._links.thumbnail !== undefined && art._links.thumbnail.href !== "/assets/shared/missing_image.png") {
                 return (
@@ -167,6 +186,7 @@ class Dataset extends Component {
             }
         });
 
+        let pushArray = this.state.pushResults;
         let artistPush = pushArray.map((art, index) => {
             if (art._links.thumbnail !== undefined && art._links.thumbnail.href !== "/assets/shared/missing_image.png") {
                 return (
@@ -205,32 +225,41 @@ class Dataset extends Component {
 
         return (
             <div className="dataset-layer">
-                <Grid>
-                    <Row>
-                        <Col xs={12} sm={12} md={12} lg={12}>
-                            <Fade>
-                                <h3 className="title-block" id="title">Space</h3>
-                            </Fade>
-                        </Col>
-                        <Col xs={12} sm={12} md={12} lg={12}>
-                            <h3 className="empty-block" id="img">&nbsp;</h3>
-                        </Col>
+                <Row>
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                        <Fade>
+                            <h3 className="title-block" id="title">Gallery</h3>
+                            <br />
+                            <form id="form-layer"
+                                onSubmit={this.handleSearchValue}
+                            >
+                                <input
+                                    placeholder="Search . . ."
+                                    ref={input => this.search = input}
+                                    style={{ textAlign: 'center', verticalAlign: 'middle' }}
+                                />
+                            </form>
+                            <div id="empty-text" />
+                        </Fade>
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                        <h3 className="empty-block" id="img">&nbsp;</h3>
+                    </Col>
 
-                        {artistData}
-                        {artistPush}
+                    {artistData}
+                    {artistPush}
 
-                        <Col xs={12} sm={12} md={12} lg={12}>
-                            <div className="top-arrow" id="popup">
-                                {this.handleSpinner()}
-                                <h3 className="art-title">Scroll for more</h3>
-                                <Glyphicon glyph="triangle-top" />
-                            </div>
-                        </Col>
-                        <Col xs={12} sm={12} md={12} lg={12}>
-                            <div className="buffer-block">&nbsp;</div>
-                        </Col>
-                    </Row>
-                </Grid>
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                        <div className="top-arrow" id="popup">
+                            {this.handleSpinner()}
+                            <h3 className="art-title">Scroll for more</h3>
+                            <Glyphicon glyph="triangle-top" />
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                        <div className="buffer-block">&nbsp;</div>
+                    </Col>
+                </Row>
             </div>
         );
     }

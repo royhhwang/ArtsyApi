@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import '../css/BTNav.css';
-import Header from '../img/icon.png';
 
 
 class BTNav extends Component {
@@ -32,26 +31,21 @@ class BTNav extends Component {
             <Navbar inverse collapseOnSelect id="nav">
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#top"><img src={Header} alt="roy icon" className="icon-block" /></a>
-                        <a href="#top" className="mobile-hide hvr-ripple-out">Artsy</a>
+                        <a href="/">Artsy</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                        <NavItem eventKey={1} href="#title" className="mobile-hide">
-                            Title
+                        <NavItem eventKey={1} href="#top" className="mobile-hide">
+                            Home
                         </NavItem>
-                        <NavItem eventKey={2} href="#carousel" className="mobile-hide">
-                            Carousel
-                        </NavItem>
-                        <NavItem eventKey={3} href="#img" className="mobile-hide">
-                            Images
+                        <NavItem eventKey={2} href="#title" className="mobile-hide">
+                            Artpiece
                         </NavItem>
                         <NavDropdown eventKey={3} title="" id="basic-nav-dropdown" className="open">
-                            <MenuItem eventKey={3.1} href="#title">Title</MenuItem>
-                            <MenuItem eventKey={3.2} href="#carousel">Carousel</MenuItem>
-                            <MenuItem eventKey={3.3} href="#img">Images</MenuItem>
+                            <MenuItem eventKey={3.1} href="#top">Home</MenuItem>
+                            <MenuItem eventKey={3.3} href="#title">Artpiece</MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
