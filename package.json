@@ -11,11 +11,12 @@
     "style": "sass --watch client/src/scss:client/src/css"
   },
   "dependencies": {
+    "d3": "^5.7.0",
     "express": "^4.16.2",
     "nodemon": "^1.17.5",
     "path": "^0.12.7",
     "react-bootstrap": "^0.32.1",
-    "react-d3": "^0.4.0",
+    "react-d3-library": "^1.1.8",
     "react-reveal": "^1.2.2",
     "superagent": "^3.8.3",
     "traverson": "^6.0.4",

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ProgressBar } from 'react-bootstrap';
 import '../css/Preloader.css';
 
 let now = 0;
@@ -38,13 +37,15 @@ class Preloader extends Component {
 
         const removePreload = this.state.loading ? 'layer-visible' : 'layer-fade';
         const welcomeMsg = this.state.active ? 'loader' : 'no-msg';
-        const removeLoad = this.state.active ? 'no-bar' : '';
+        const removeLoad = this.state.active ? 'no-bar' : 'custom-bar';
+        const removeText = this.state.active ? 'no-text' : 'custom-text';
 
         return (
             <div className={removePreload + " preload-layer"}>
                 <div id='preload-center'>
                     <div id='preload-absolute'>
-                        <ProgressBar active striped now={now} label={`${now}%`} className={removeLoad} />
+                        <progress value={now} max='100' className={removeLoad}></progress>
+                        <h1 className={removeText}>{now}</h1>
                         <div className={welcomeMsg + ' preload-shadow'}>Welcome</div>
                     </div>
                 </div>

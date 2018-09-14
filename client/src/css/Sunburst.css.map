@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,UAAW;EACP,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,KAAK;EACvB,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,KAAK;EAClB,UAAU,EAAE,MAAM",
-"sources": ["../scss/Sunburst.scss"],
-"names": [],
-"file": "Sunburst.css"
-}
