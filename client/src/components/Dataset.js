@@ -250,6 +250,7 @@ class Dataset extends Component {
         return (
             <div className="dataset-layer">
                 <div className="static-layer">
+                    <h3>Spotlight</h3>
                     {imageLinking}
                 </div>
                 <Fade>
