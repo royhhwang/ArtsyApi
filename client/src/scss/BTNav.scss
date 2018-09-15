@@ -11,10 +11,18 @@
     background-color: transparent !important;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font-size: 20px !important;
+}
+
 .navbar-inverse .navbar-nav > li > a:hover {
     border-color: white;
     cursor: pointer;
     color: #15c441;
+    transform: scale(1.15);
 }
 
 .navbar-inverse .navbar-nav > li > a:hover::before {
@@ -39,11 +47,15 @@
 
 .navbar-brand {
     line-height: 45px !important;
-    font-size: 30px !important;
+    font-size: 45px !important;
     padding-right: 0 !important;
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     &:hover {
         color: #15c441 !important;
+        transform: scale(1.15);
     }
 }
 

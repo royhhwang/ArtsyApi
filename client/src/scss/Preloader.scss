@@ -52,9 +52,8 @@
     animation: removeLayer 1.2s linear forwards;
 }
 
-.loader {
+.text-point {
     color: black;
-    display: inline-block;
     position: absolute;
     width: 100%;
     height: 50%;
@@ -63,16 +62,20 @@
     letter-spacing: 0.12em;
     -webkit-animation: fadeIn 1s linear forwards;
     animation: fadeIn 1s linear forwards;
+
+    h3 {
+        position: absolute;
+        top: 35%;
+        right: 30%;
+    }
+}
+
+.loader {
+    display: inline-block;
 }
 
 .no-msg {
-    width: 100%;
-    height: 50%;
-    font-size: 40px;
-    letter-spacing: 0.12em;
-    position: absolute;
     display: none;
-    top: 0%;
 }
 
 .no-bar {

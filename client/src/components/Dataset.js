@@ -65,7 +65,14 @@ class Dataset extends Component {
             })
             .getResource((error, art) => {
                 artData.push(art);
-                this.setState({ secondResults: this.state.results.concat(artData[0]._embedded.results) });
+                if (artData !== undefined) {
+                    this.setState({ secondResults: this.state.results.concat(artData[0]._embedded.results) });
+                }
+                else {
+                    return (
+                        console.log(error)
+                    )
+                }
             })
     }
 
@@ -116,9 +123,17 @@ class Dataset extends Component {
             })
             .getResource((error, art) => {
                 pushData.push(art);
-                this.setState({ secondResults: pushData[0]._embedded.results });
-                this.setState({ pushResults: [] });
-                this.setState({ loading: false });
+                if (pushData[0] !== undefined) {
+
+                    this.setState({ secondResults: pushData[0]._embedded.results });
+                    this.setState({ pushResults: [] });
+                    this.setState({ loading: false });
+                }
+                else {
+                    return (
+                        console.log(error)
+                    )
+                }
             })
     }
 
@@ -152,8 +167,15 @@ class Dataset extends Component {
             })
             .getResource((error, art) => {
                 pushData.push(art);
-                this.setState({ pushResults: this.state.pushResults.concat(pushData[0]._embedded.results) });
-                this.setState({ loading: false });
+                if (pushData[0] !== undefined) {
+                    this.setState({ pushResults: this.state.pushResults.concat(pushData[0]._embedded.results) });
+                    this.setState({ loading: false });
+                }
+                else {
+                    return (
+                        console.log(error)
+                    )
+                };
             })
     }
 

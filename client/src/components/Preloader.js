@@ -46,7 +46,7 @@ class Preloader extends Component {
                     <div id='preload-absolute'>
                         <progress value={now} max='100' className={removeLoad}></progress>
                         <h1 className={removeText}>{now}</h1>
-                        <div className={welcomeMsg + ' preload-shadow'}>Welcome</div>
+                        <div className={welcomeMsg + ' preload-shadow text-point'}><h3>Welcome</h3></div>
                     </div>
                 </div>
             </div>
