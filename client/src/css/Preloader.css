@@ -1,10 +1,11 @@
 .preload-layer {
-  background-color: beige;
+  background: linear-gradient(to top right, #ffff9d 20%, #48ce48 100%);
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: 10;
-  pointer-events: none; }
+  pointer-events: none;
+  cursor: none; }
 
 #preload-center {
   width: 100%;

@@ -12,13 +12,16 @@
 
 .static-layer {
   width: 100%;
-  padding: 12rem 0 12rem 0; }
+  padding: 12rem 0 12rem 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 119, 0.336) 50%, rgba(255, 255, 255, 0.2) 90%); }
+  .static-layer h3 {
+    padding-bottom: 2rem; }
 
 .static-img-layer {
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
-  -webkit-animation: Gradient 10s ease infinite;
-  animation: Gradient 10s ease infinite;
+  -webkit-animation: Gradient 5s ease infinite;
+  animation: Gradient 5s ease infinite;
   transition: transform 0.3s;
   padding: 0.3em;
   margin: 0.5em;
