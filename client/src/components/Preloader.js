@@ -48,6 +48,7 @@ class Preloader extends Component {
                         <h1 className={removeText}>{now}</h1>
                         <div className={welcomeMsg + ' preload-shadow text-point'}><h3>Welcome</h3></div>
                     </div>
+                    <div className="preload-background"></div>
                 </div>
             </div>
         )

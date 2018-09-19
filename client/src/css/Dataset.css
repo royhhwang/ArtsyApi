@@ -18,11 +18,12 @@
     padding-bottom: 2rem; }
 
 .static-img-layer {
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background: linear-gradient(-45deg, #d13d11, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   -webkit-animation: Gradient 5s ease infinite;
   animation: Gradient 5s ease infinite;
-  transition: transform 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s, transform 0.3s;
   padding: 0.3em;
   margin: 0.5em;
   width: 20%;
@@ -50,7 +51,8 @@
   max-height: 73px !important; }
 
 .img-blocks {
-  transition: transform 0.3s; }
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s, transform 0.3s; }
   .img-blocks:hover {
     transform: scale(1.15);
     box-shadow: 0 24px 88px -8px rgba(30, 30, 30, 0.352); }
