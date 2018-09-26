@@ -41,14 +41,14 @@
 
 .data-block {
   width: 25%;
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: top; }
   .data-block img {
     width: 50%; }
 
 .img-titles {
   padding-bottom: 4em;
-  font-family: OswaldLight !important;
-  max-height: 73px !important; }
+  font-family: OswaldLight !important; }
 
 .img-blocks {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
@@ -105,13 +105,13 @@
     background-position: 100% 100%; }
   100% {
     background-position: 0% 0%; } }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1075px) {
   .data-block {
     width: 33%; }
 
   .static-layer {
     padding: 3rem 0; } }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 775px) {
   .data-block {
     width: 50%; }
 
