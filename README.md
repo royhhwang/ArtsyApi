@@ -1,8 +1,8 @@
+# Cataloged Art Gallery
+
 https://artsyapi.herokuapp.com
 
-#Cataloged Art Gallery
-
-##Artsy Api
+## Artsy Api
 
 Using Gatsby.js and Artsy.net's API, I've built a stylized landing page for displaying images, hyperlinks, etc.
 
